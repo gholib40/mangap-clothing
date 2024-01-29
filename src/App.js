@@ -1,21 +1,19 @@
 import Home from "./Route/Home/Home.Component";
 import { Route,Routes } from "react-router-dom";
+import Navigation from "./Route/navigation/Navigation.component";
 
-const Navigation = ()=> {
+const Shop = ()=> {
   return (
-    <div>
-      <div>
-       <h1>this navigation</h1>
-      </div>
-    </div>
+    <h1>Shop Page</h1>
   )
 }
 
 const App = ()=> {
   return (
     <Routes>
-       <Route path="/home" element={ <Home/>} >
-        <Route />
+       <Route path="/" element={<Navigation />} >
+        <Route index element={ <Home/>} />
+        <Route path="shop" element={<Shop/>} />
        </Route>
     </Routes>
   
