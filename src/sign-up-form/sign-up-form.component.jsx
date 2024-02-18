@@ -11,7 +11,7 @@ const defaultForm = {
     confirmPassword : ''
 }
 
-const SignUp = ()=> {
+const SignUpForm = ()=> {
     const [formFields,setFormFields] = useState(defaultForm)
     const {displayName,email,password,confirmPassword} = formFields
 
@@ -31,7 +31,7 @@ const SignUp = ()=> {
         await createUserDocumentFromAuth(user,{displayName})
         resetFormFields()
        } catch (error) {
-       if(error.code == 'auth/email-already-in-use'){
+       if(error.code === 'auth/email-already-in-use'){
         return alert('Email Sudah Terdaftar')
        }
        console.log(error)
@@ -59,4 +59,4 @@ const SignUp = ()=> {
     )
 }
 
-export default SignUp
+export default SignUpForm

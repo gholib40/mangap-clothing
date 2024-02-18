@@ -3,9 +3,10 @@ import './Directory.styles.scss'
 
 const Directory = ({categori})=> {
     return (
-        <div className="directory-container">
+        <div className="directory-container" >
         {categori.map((categories)=> {
-            return <Category category={categories} />
+            return <Category key={categories.id} category={categories} />
+            
         })}
         </div>
     )
