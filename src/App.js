@@ -4,7 +4,7 @@ import Navigation from "./Route/navigation/Navigation.component";
 import Authentication from "./Route/authentication/authentication.component";
 const Shop = ()=> {
   return (
-    <h1>Shop Page</h1>
+    <h1>SHOP PAGE</h1>
   )
 }
 
