@@ -3,14 +3,16 @@ import { Route,Routes } from "react-router-dom";
 import Navigation from "./Route/navigation/Navigation.component";
 import Authentication from "./Route/authentication/authentication.component";
 import Shop from "./Route/shop/shop.component";
+import CheckOut from "./Route/Checkout/checkout.component";
 
 const App = ()=> {
   return (
     <Routes>
        <Route path="/" element={<Navigation />} >
         <Route index element={ <Home/>} />
-        <Route path="shop" element={<Shop/>} />
+        <Route path="shop" element={<Shop/>} /> 
         <Route path="auth" element={<Authentication/>} />
+        <Route path="checkout" element = {<CheckOut />} />
        </Route>
     </Routes>
   
