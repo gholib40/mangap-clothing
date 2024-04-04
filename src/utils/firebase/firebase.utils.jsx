@@ -38,8 +38,16 @@ export const signInWithGoogleRedirect = ()=> signInWithRedirect(auth,provider)
 
 export const db = getFirestore()
 
-export const addCollectionAndDocument = async (colletionKey,objectToAdd) => {
-  const collectionRef = collection(db,colletionKey)
+export const addCollectionAndDocument = async (collectionKey,objectToAdd) => {
+  const collectionRef = collection(db,collectionKey)
+  const batch = writeBatch(db)
+
+  objectToAdd.forEach((object) => {
+    const docRef = doc(collectionRef, object.title.toLowerCase())
+    batch.set(docRef,object)
+  })
+  await batch.commit()
+  console.log('done')
 }
 
 
