@@ -4,6 +4,7 @@ import { CategoriesContext } from "../../context/categories.context";
 import { useEffect } from "react";
 import ProductCard from "../../Component/product-card/product-card.component";
 import './category.styles.scss'
+import { Fragment } from "react";
 
 const Category = ()=> {
     const {category} = useParams();
@@ -16,11 +17,15 @@ const Category = ()=> {
     }, [category,categoriesMap])
     
     return(
-        <div className="directory-item-container">
+        <Fragment>
+            <h2 className="category-title">{category.toUpperCase()}</h2>
+            <div className="category-container">
             {product&&
-                product.map((product) => <ProductCard key={product.id} product={product} />)
+            product.map((product) => <ProductCard key={product.id} product={product} />)
             }
-        </div>
+            </div>
+        </Fragment>
+       
     )
 }
 
