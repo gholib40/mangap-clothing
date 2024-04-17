@@ -6,10 +6,13 @@ import App from './App';
 import { UserProvider } from './context/user.context';
 import { CategoriesContextProvider } from './context/categories.context';
 import { CartProvider } from './context/cart.context';
+import { store } from './store/store';
+import { Provider } from 'react-redux';
 
 const rootElement = document.getElementById('root')
 render(
   <React.StrictMode>
+  <Provider store={store}>
     <BrowserRouter>
       <UserProvider>
       <CategoriesContextProvider>
@@ -19,6 +22,8 @@ render(
       </CategoriesContextProvider>
       </UserProvider>
     </BrowserRouter>
+  </Provider>
+    
   </React.StrictMode>,
   rootElement
 );
