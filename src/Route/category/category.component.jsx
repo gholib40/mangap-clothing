@@ -5,10 +5,13 @@ import { useEffect } from "react";
 import ProductCard from "../../Component/product-card/product-card.component";
 import './category.styles.scss'
 import { Fragment } from "react";
+import { selectCategoriesMap } from "../../store/categories/category.selector";
+import { useSelector } from "react-redux";
+
 
 const Category = ()=> {
     const {category} = useParams();
-    const {categoriesMap} = useContext(CategoriesContext)
+    const categoriesMap = useSelector(selectCategoriesMap)
     const [product,setProduct] = useState(categoriesMap[category])
 
     useEffect(()=> {
