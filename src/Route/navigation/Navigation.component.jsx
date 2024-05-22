@@ -9,12 +9,14 @@ import CartIcon from "../../Component/cart-icon/cart-icon.component";
 import CartDropDown from "../../Component/cart-dropdown/cart-dropdown.component";
 import { UseSelector, useSelector } from "react-redux";
 import { selectCurrentUser } from "../../store/user/user.selector";
+import { selectCartOpen } from "../../store/cart/cart.selector";
 
 
 const Navigation = ()=> {
   // const {currentUser} = useContext(UserContext)
-  const {isCartOpen} = useContext(CartContext)
+  // const {isCartOpen} = useContext(CartContext)
   const currentUser = useSelector(selectCurrentUser)
+  const isCartOpen = useSelector(selectCartOpen)
     return (
       <Fragment>
         <div className="navigation">
