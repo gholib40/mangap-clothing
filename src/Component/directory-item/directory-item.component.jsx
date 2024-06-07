@@ -4,6 +4,7 @@ import './directory-item.styles.scss'
 const DirectoryItem = ({category})=> {
    const {title,imageUrl,route} = category
    const navigate = useNavigate()
+   
    const onNavigateHandler = () => navigate(route);
     return (
         <div className='directory-item-container' onClick={onNavigateHandler}>
